@@ -17,12 +17,9 @@ import requests
 from req_to_ofd import check_processing
 from telebot import types as ty
 
-admin_list = ["ilyaparshin321", "ivan_tikholaz", "the7th_aigeluh", "shaurlandia"]
-admin_id_list = {"ilyaparshin321": '107992797', "ivan_tikholaz": '637287849', "the7th_aigeluh": '452470174', "shaurlandia":config.admin_tg_id}
 bot = telebot.TeleBot(config.TOKEN)
 
 
-# feedback_group_id = '-1001869223231'
 class cafe:  # класс для информации о точках сети
     name = ""
     description = ""
@@ -694,7 +691,6 @@ def process_pay(message: telebot.types.Message):  # обработка опла�
         #message.successful_payment.order_info.phone_number
 
         #print(message.successful_payment.order_info)
-        # {'name': None, 'phone_number': '79660273275', 'email': 'teoman_oztemel@mail.ru', 'shipping_address': None}
         msg = message.successful_payment.order_info
         phone = msg.phone_number
         mail = msg.email
